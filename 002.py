@@ -1,8 +1,10 @@
-import sys
-
 '''
 002: Even Fibonacci Numbers
+
+Newton Ni
 '''
+
+import sys
 
 a, b, c, sum = 1, 2, 0, 2
 

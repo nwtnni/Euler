@@ -1,8 +1,10 @@
-import sys
-
 '''
 001: Multiples of 3 and 5
+
+Newton Ni
 '''
+
+import sys
 
 sum = 0;
 for i in range(int(sys.argv[1])):
