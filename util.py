@@ -13,6 +13,9 @@ def decompose(n):
 
 def probablePrime(n, k):
 
+    if (n in [2, 3, 5, 7, 11]):
+        return True
+
     r, d = decompose(n)
     
     for i in range(k):
