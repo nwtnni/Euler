@@ -42,13 +42,13 @@ def diagonalLeft(grid):
 
     record = 0
 
-    for i in range(ADJ, DIM):
-        for j in range(ADJ, DIM):
+    for i in range(DIM - ADJ):
+        for j in range(DIM - ADJ):
 
             prod = 1
 
             for k in range(ADJ):
-                prod *= grid[i - k][j - k]
+                prod *= grid[i + k][j + k]
 
             record = prod if prod > record else record
 
@@ -58,13 +58,13 @@ def diagonalRight(grid):
 
     record = 0
 
-    for i in range(DIM - ADJ):
+    for i in range(ADJ, DIM):
         for j in range(DIM - ADJ):
 
             prod = 1
 
             for k in range(ADJ):
-                prod *= grid[i + k][j + k]
+                prod *= grid[i - k][j + k]
 
             record = prod if prod > record else record
 
@@ -85,12 +85,5 @@ if __name__ == "__main__":
             for j in range(DIM):
                 grid[i].append(int(tiles[counter]))
                 counter += 1
-
-    print grid
-
-    print horizontal(grid)
-    print vertical(grid)
-    print diagonalLeft(grid)
-    print diagonalRight(grid)
 
     print max(horizontal(grid), vertical(grid), diagonalLeft(grid), diagonalRight(grid))
