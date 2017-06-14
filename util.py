@@ -13,8 +13,11 @@ def decompose(n):
 
 def probablePrime(n, k):
 
-    if (n in [2, 3, 5, 7, 11]):
-        return True
+    if n < 12:
+        if n in [2, 3, 5, 7, 11]:
+            return True
+        else:
+            return False
 
     r, d = decompose(n)
     
