@@ -4,7 +4,16 @@
 Newton Ni
 '''
 
-from util import sum_of_divisors
+from math import sqrt
+
+def sum_of_divisors(n):
+
+    divisors = []
+    for i in range(1, int(sqrt(n)) + 1):
+        if n % i == 0:
+            divisors.append(i)
+            divisors.append(n / i)
+    return sum(divisors) - n
 
 if __name__ == "__main__":
 
