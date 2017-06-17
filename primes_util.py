@@ -1,6 +1,14 @@
 import math as m
 import random
 
+PRIMES = [
+    2, 3, 5, 7, 11, 13,
+    17, 19, 23, 29, 31,
+    37, 41, 43, 47, 53,
+    59, 61, 67, 71, 73,
+    79, 83, 89, 97
+    ]
+
 def decompose(n):
 
     d = n - 1
@@ -11,13 +19,10 @@ def decompose(n):
         d = d / 2
     return r, d
 
-def probablePrime(n, k):
+def probable_prime(n, k):
 
     if n < 12:
-        if n in [2, 3, 5, 7, 11]:
-            return True
-        else:
-            return False
+        return True if n in PRIMES else False
 
     r, d = decompose(n)
     
@@ -41,3 +46,17 @@ def probablePrime(n, k):
 
     return True
     
+def generate_primes(n):
+
+    if n <= 25: 
+        return PRIMES[:n]
+
+    prime_list = list(PRIMES)
+    i = 99
+
+    while len(prime_list) < n:
+        if probable_prime(i, 5):
+            prime_list.append(i)
+        i += 2
+
+    return prime_list

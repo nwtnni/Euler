@@ -4,7 +4,7 @@
 Newton Ni
 '''
 
-from util import probablePrime
+from primes_util import probable_prime
 
 TARGET = 2000000
 
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     sum = 2
 
     for i in range(3, TARGET, 2):
-        if probablePrime(i, 5):
+        if probable_prime(i, 5):
             sum += i
 
     print sum

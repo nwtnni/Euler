@@ -4,7 +4,7 @@
 Newton Ni
 '''
 
-from util import probablePrime
+from primes_util import probable_prime
 
 if __name__ == "__main__":
     
@@ -20,7 +20,7 @@ if __name__ == "__main__":
             def quadratic(n):
                 return n*n + a*n + b 
 
-            while probablePrime(quadratic(i), 4):
+            while probable_prime(quadratic(i), 4):
                 i += 1
             
             if i + 1 > max_primes:
