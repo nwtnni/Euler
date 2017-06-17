@@ -4,10 +4,12 @@
 Newton Ni
 '''
 
-import sys
+LIMIT = 100
 
-n, squaresum = int(sys.argv[1]), 0
-for i in range(n + 1):
-    squaresum += i * i
-sumsquare = ((n * (n + 1)) / 2)
-print(sumsquare * sumsquare - squaresum)
+def add(a, b): return a + b
+
+if __name__ == "__main__":
+    
+    squaresum = reduce(add, [n for n in range(1, LIMIT + 1)])**2
+    sumsquare = reduce(add, [n**2 for n in range(1, LIMIT + 1)])
+    print squaresum - sumsquare
