@@ -19,7 +19,7 @@ def decompose(n):
         d = d / 2
     return r, d
 
-def probable_prime(n, k):
+def probable_prime(n, k=5):
 
     if n < 12:
         return True if n in PRIMES else False

@@ -13,7 +13,7 @@ if __name__ == "__main__":
     sum = 2
 
     for i in range(3, TARGET, 2):
-        if probable_prime(i, 5):
+        if probable_prime(i):
             sum += i
 
     print sum

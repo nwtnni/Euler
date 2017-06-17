@@ -20,7 +20,7 @@ if __name__ == "__main__":
             def quadratic(n):
                 return n*n + a*n + b 
 
-            while probable_prime(quadratic(i), 4):
+            while probable_prime(quadratic(i)):
                 i += 1
             
             if i + 1 > max_primes:
