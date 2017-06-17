@@ -4,16 +4,19 @@
 Newton Ni
 '''
 
-import sys
+LIMIT = 4000000
 
-a, b, c, sum = 1, 2, 0, 2
+if __name__ == "__main__":
 
-while (a + b < int(sys.argv[1])):
-    c = a + b
-    if (c % 2 == 0):
-        sum += c
-    a, b = b, c
+    a, b, c = 1, 2, 0
+    sum = 2
 
-print sum
+    while (a + b < 4000000):
+        c = a + b
+        if (c % 2 == 0):
+            sum += c
+        a, b = b, c
+
+    print sum
 
 
