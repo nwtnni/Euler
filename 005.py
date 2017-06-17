@@ -4,21 +4,18 @@
 Newton Ni
 '''
 
-import sys
-from util import probablePrime
+from primes_util import probable_prime
 
-# Increment by the LCM of primes
-inc = 3
-for i in range(4, int(sys.argv[1])):
-    if probablePrime(i, 10):
-        inc *= i
+LIMIT = 20
 
-n = 0
-while (True):
-    n += inc
-    for i in range(int(sys.argv[1]), 1, -1):
-        if (n % i != 0):
+if __name__ == "__main__":
+    
+    # Increment by the LCM of primes
+    n = 0
+    while (True):
+        n += 9699690
+        for i in range(LIMIT, 1, -1):
+            if (n % i != 0): break
+        else:
+            print n
             break
-    else:
-        print n
-        break
