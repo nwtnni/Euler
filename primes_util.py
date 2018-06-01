@@ -1,4 +1,3 @@
-import math as m
 import random
 
 PRIMES = [
@@ -9,6 +8,7 @@ PRIMES = [
     79, 83, 89, 97
     ]
 
+
 def decompose(n):
 
     d = n - 1
@@ -16,8 +16,9 @@ def decompose(n):
 
     while (d % 2 == 0):
         r += 1
-        d = d / 2
+        d = d // 2
     return r, d
+
 
 def probable_prime(n, k=5):
 
@@ -25,11 +26,12 @@ def probable_prime(n, k=5):
         return True if n in PRIMES else False
 
     r, d = decompose(n)
-    
+
     for i in range(k):
 
         a = random.randint(2, n - 2)
         x = pow(a, d, n)
+        print(x)
 
         if (x == 1 or x == n - 1):
             continue
@@ -45,10 +47,11 @@ def probable_prime(n, k=5):
             return False
 
     return True
-    
+
+
 def generate_primes(n):
 
-    if n <= 25: 
+    if n <= 25:
         return PRIMES[:n]
 
     prime_list = list(PRIMES)
